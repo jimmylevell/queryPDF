@@ -1,7 +1,7 @@
 ###############################################################################################
 # levell fider - BASE
 ###############################################################################################
-FROM python:3.9 as levell-querypdf-base
+FROM python:3.11 as levell-querypdf-base
 
 RUN apt-get update
 RUN apt-get install dos2unix -y
