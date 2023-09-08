@@ -31,6 +31,9 @@ AZURE_OPENAI_SERVICE_CHAT_MODEL = os.environ.get("OPENAI_API_CHAT_MODEL") or "ch
 CHUNK_SIZE = int(os.environ.get("CHUNK_SIZE") or 1000)
 CHUNK_OVERLAP = int(os.environ.get("CHUNK_OVERLAP") or 200)
 
+USERNAME_LOGIN = os.environ.get("USERNAME_LOGIN") or "admin"
+PASSWORD_LOGIN = os.environ.get("PASSWORD_LOGIN") or "password"
+
 def chunkify(arr: Iterable, size: int = 8):
     for i in range(0, len(arr), size):
         yield arr[i : i + size]
@@ -193,6 +196,8 @@ with gr.Blocks(css=css) as app:
 
 if __name__ == "__main__":
     if ENVIRONMENT == "development":
+        print("Running in development mode")
         app.launch(debug=True, enable_queue=True)
     else:
-        app.launch(server_name="0.0.0.0", server_port=7860, enable_queue=True)
+        print("Running in production mode")
+        app.launch(server_name="0.0.0.0", server_port=7860, enable_queue=True, auth=(USERNAME_LOGIN, PASSWORD_LOGIN))

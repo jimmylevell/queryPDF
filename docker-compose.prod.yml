@@ -17,9 +17,13 @@ services:
       OPENAI_API_CHAT_MODEL: chat
       CHUNK_SIZE: 1500
       CHUNK_OVERLAP: 150
+      USERNAME_LOGIN: DOCKER-SECRET->USERNAME_LOGIN
+      PASSWORD_LOGIN: DOCKER-SECRET->PASSWORD_LOGIN
     secrets:
       - OPENAI_API_BASE
       - OPENAI_API_KEY
+      - USERNAME_LOGIN
+      - PASSWORD_LOGIN
     deploy:
       replicas: 1
       update_config:
@@ -49,4 +53,8 @@ secrets:
   OPENAI_API_BASE:
     external: true
   OPENAI_API_KEY:
+    external: true
+  USERNAME_LOGIN:
+    external: true
+  PASSWORD_LOGIN:
     external: true

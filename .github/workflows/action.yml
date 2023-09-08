@@ -45,7 +45,7 @@ jobs:
           load: true
           target: levell-querypdf-deploy
           tags: |
-            ghcr.io/jimmylevell/queryPDF/queryPDF:latest
+            ghcr.io/jimmylevell/querypdf/querypdf:latest
       -
         name: Push queryPDF docker
         uses: docker/build-push-action@v4
@@ -54,7 +54,7 @@ jobs:
           context: .
           target: levell-querypdf-deploy
           tags: |
-            ghcr.io/jimmylevell/queryPDF/queryPDF:latest
+            ghcr.io/jimmylevell/querypdf/querypdf:latest
       -
         name: Deploy to swarm
         uses: wshihadeh/docker-deployment-action@v2
