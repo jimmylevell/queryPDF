@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   feedback:
-    image: ghcr.io/jimmylevell/queryPDF/queryPDF:latest
+    image: ghcr.io/jimmylevell/querypdf/querypdf:latest
     networks:
       - traefik-public
     environment:
