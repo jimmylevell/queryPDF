@@ -1,6 +1,11 @@
 openai
+gradio
+python-dotenv
 tiktoken
 chromadb
 langchain
+PyPDF2
+faiss-cpu
+pypdf
 unstructured
 unstructured[local-inference]
